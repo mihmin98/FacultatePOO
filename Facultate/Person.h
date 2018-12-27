@@ -10,6 +10,7 @@ class Person
 public:
 	Person();
 	Person(std::string firstName, std::string lastName, std::string cnp, std::string email = "");
+	~Person();
 
 	//Setters
 	void SetFirstName(std::string firstName);
@@ -20,10 +21,12 @@ public:
 	//Getters
 	std::string GetFirstName();
 	std::string GetLastName();
+	std::string GetFullName();
 	std::string GetCNP();
 	std::string GetEmail();
 
 	void AddRole(Role* role);
+	void RemoveRole(Role::RoleType role);
 	void PrintInfo();
 
 private:

@@ -17,6 +17,13 @@ Person::Person(std::string firstName, std::string lastName, std::string cnp, std
 {
 }
 
+Person::~Person()
+{
+	for (int i = 0; i < roles.size(); i++) {
+		delete roles[i];
+	}
+}
+
 void Person::SetFirstName(std::string firstName)
 {
 	this->firstName = firstName;
@@ -47,6 +54,11 @@ std::string Person::GetLastName()
 	return lastName;
 }
 
+std::string Person::GetFullName()
+{
+	return firstName + " " + lastName;
+}
+
 std::string Person::GetCNP()
 {
 	return cnp;
@@ -59,7 +71,25 @@ std::string Person::GetEmail()
 
 void Person::AddRole(Role * role)
 {
+	//Check if the person already has the role
+	for (int i = 0; i < roles.size(); i++) {
+		if (roles[i]->GetRole() == role->GetRole()) {
+			std::cout << "The person already has this role";
+			return;
+		}
+	}
 	roles.push_back(role);
+}
+
+void Person::RemoveRole(Role::RoleType role)
+{
+	for (int i = 0; i < roles.size(); i++) {
+		if (roles[i]->GetRole() == (int)role) {
+			delete roles[i];
+			roles.erase(roles.begin() + i);
+			break;
+		}
+	}
 }
 
 void Person::PrintInfo()
