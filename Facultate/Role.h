@@ -11,9 +11,10 @@ public:
 
 	Role();
 	Role(RoleType type);
+	virtual ~Role();
 
 	virtual void PrintInfo();
-
+	int GetRole();
 protected:	
 	RoleType type;
 };
