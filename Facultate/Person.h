@@ -1,14 +1,12 @@
 #pragma once
 #include <string>
+#include <vector>
+#include <iostream>
+#include "Role.h"
+
 
 class Person
 {
-	std::string firstName;
-	std::string lastName;
-	std::string cnp;
-	std::string email;
-
-
 public:
 	Person();
 	Person(std::string firstName, std::string lastName, std::string cnp, std::string email = "");
@@ -25,5 +23,15 @@ public:
 	std::string GetCNP();
 	std::string GetEmail();
 
+	void AddRole(Role* role);
+	void PrintInfo();
+
+private:
+	std::string firstName;
+	std::string lastName;
+	std::string cnp;
+	std::string email;
+
+	std::vector<Role*> roles;
 };
 

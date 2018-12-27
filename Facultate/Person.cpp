@@ -56,3 +56,18 @@ std::string Person::GetEmail()
 {
 	return email;
 }
+
+void Person::AddRole(Role * role)
+{
+	roles.push_back(role);
+}
+
+void Person::PrintInfo()
+{
+	std::cout << "First Name: " << firstName << "\nLast Name: " << lastName << "\nCNP: " << cnp << "\nEmail: " << email << "\n\n";
+	for (int i = 0; i < roles.size(); i++) {
+		roles[i]->PrintInfo();
+		std::cout << "\n";
+	}
+	std::cout << "\n";
+}
