@@ -25,7 +25,7 @@ void Grade::Print()
 	std::cout << discipline->GetName() << ": " << value << "\n";
 }
 
-int Grade::GetValue()
+float Grade::GetValue()
 {
 	return value;
 }

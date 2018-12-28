@@ -152,15 +152,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Activity.h" />
+    <ClInclude Include="ActivityRepository.h" />
     <ClInclude Include="AdministrativeRole.h" />
     <ClInclude Include="Discipline.h" />
+    <ClInclude Include="DisciplineRepository.h" />
     <ClInclude Include="Grade.h" />
     <ClInclude Include="GuestRole.h" />
     <ClInclude Include="MaintenanceActivity.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Person.h" />
+    <ClInclude Include="PersonRepository.h" />
+    <ClInclude Include="Repository.h" />
     <ClInclude Include="Role.h" />
     <ClInclude Include="Room.h" />
+    <ClInclude Include="RoomRepository.h" />
     <ClInclude Include="SpecialActivity.h" />
     <ClInclude Include="StudentRole.h" />
     <ClInclude Include="TeacherRole.h" />
@@ -168,8 +173,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Activity.cpp" />
+    <ClCompile Include="ActivityRepository.cpp" />
     <ClCompile Include="AdministrativeRole.cpp" />
     <ClCompile Include="Discipline.cpp" />
+    <ClCompile Include="DisciplineRepository.cpp" />
     <ClCompile Include="Facultate.cpp" />
     <ClCompile Include="Grade.cpp" />
     <ClCompile Include="GuestRole.cpp" />
@@ -181,8 +188,11 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Person.cpp" />
+    <ClCompile Include="PersonRepository.cpp" />
+    <ClCompile Include="Repository.cpp" />
     <ClCompile Include="Role.cpp" />
     <ClCompile Include="Room.cpp" />
+    <ClCompile Include="RoomRepository.cpp" />
     <ClCompile Include="SpecialActivity.cpp" />
     <ClCompile Include="StudentRole.cpp" />
     <ClCompile Include="TeacherRole.cpp" />

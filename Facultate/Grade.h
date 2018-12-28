@@ -11,7 +11,7 @@ public:
 
 	void Print();
 
-	int GetValue();
+	float GetValue();
 	Discipline* GetDiscipline();
 	void SetValue(float value);
 private:

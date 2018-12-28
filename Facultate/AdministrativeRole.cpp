@@ -22,7 +22,7 @@ void AdministrativeRole::PrintInfo()
 void AdministrativeRole::AddJob(std::string job)
 {
 	//Check if job is already in the vector
-	for (int i = 0; i < jobs[i].size(); i++) {
+	for (int i = 0; i < jobs.size(); i++) {
 		if (jobs[i] == job) {
 			std::cout << "The person already has this job!\n";
 			return;
