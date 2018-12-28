@@ -151,11 +151,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Activity.h" />
+    <ClInclude Include="AdministrativeRole.h" />
+    <ClInclude Include="Discipline.h" />
+    <ClInclude Include="Grade.h" />
+    <ClInclude Include="GuestRole.h" />
+    <ClInclude Include="MaintenanceActivity.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Person.h" />
+    <ClInclude Include="Role.h" />
+    <ClInclude Include="Room.h" />
+    <ClInclude Include="SpecialActivity.h" />
+    <ClInclude Include="StudentRole.h" />
+    <ClInclude Include="TeacherRole.h" />
+    <ClInclude Include="TeachingActivity.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Activity.cpp" />
+    <ClCompile Include="AdministrativeRole.cpp" />
+    <ClCompile Include="Discipline.cpp" />
     <ClCompile Include="Facultate.cpp" />
+    <ClCompile Include="Grade.cpp" />
+    <ClCompile Include="GuestRole.cpp" />
+    <ClCompile Include="MaintenanceActivity.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -163,6 +181,12 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Person.cpp" />
+    <ClCompile Include="Role.cpp" />
+    <ClCompile Include="Room.cpp" />
+    <ClCompile Include="SpecialActivity.cpp" />
+    <ClCompile Include="StudentRole.cpp" />
+    <ClCompile Include="TeacherRole.cpp" />
+    <ClCompile Include="TeachingActivity.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

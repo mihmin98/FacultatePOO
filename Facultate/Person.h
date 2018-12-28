@@ -29,6 +29,8 @@ public:
 	void RemoveRole(Role::RoleType role);
 	void PrintInfo();
 
+	bool IsRole(Role::RoleType role);
+
 private:
 	std::string firstName;
 	std::string lastName;

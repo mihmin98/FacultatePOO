@@ -101,3 +101,14 @@ void Person::PrintInfo()
 	}
 	std::cout << "\n";
 }
+
+bool Person::IsRole(Role::RoleType role)
+{
+	for (int i = 0; i < roles.size(); i++) {
+		if (roles[i]->GetRole() == role) {
+			return true;
+		}
+	}
+	return false;
+}
+
