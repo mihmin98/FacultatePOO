@@ -12,8 +12,11 @@ public:
 	~TeacherRole();
 
 	void PrintInfo() override;
+	std::string ToString() override;
 	void AddDiscipline(Discipline* discipline);
 	void RemoveDiscipline(Discipline* discipline);
+
+	bool IsTeaching(Discipline* discipline);
 
 private:
 	std::vector<Discipline*> disciplines;

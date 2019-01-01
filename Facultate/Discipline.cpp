@@ -39,3 +39,26 @@ void Discipline::SetDescription(std::string description)
 {
 	this->description = description;
 }
+
+std::string Discipline::ToString()
+{
+	std::string s = "";
+	s += "Discipline " + name + "\n" + description + "\n";
+	return s;
+}
+
+std::istream & operator>>(std::istream & stream, Discipline & d)
+{
+	std::cout << "Discipline name: ";
+	stream >> d.name;
+	std::cout << "Discipline description: ";
+	stream >> d.description;
+
+	return stream;
+}
+
+std::ostream & operator<<(std::ostream & stream, Discipline & d)
+{
+	stream << d.ToString();
+	return stream;
+}

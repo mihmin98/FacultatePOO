@@ -16,3 +16,13 @@ SpecialActivity::SpecialActivity(std::string name, Room * location, Person * own
 SpecialActivity::~SpecialActivity()
 {
 }
+
+std::istream & operator>>(std::istream & stream, SpecialActivity & sa)
+{
+	std::cout << "Activity name: ";
+	stream >> sa.name;
+	std::cout << "Activity description: ";
+	stream >> sa.description;
+
+	return stream;
+}

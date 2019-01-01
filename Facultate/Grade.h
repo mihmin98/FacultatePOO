@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <string>
 #include "Discipline.h"
 
 class Grade
@@ -14,6 +15,7 @@ public:
 	float GetValue();
 	Discipline* GetDiscipline();
 	void SetValue(float value);
+	std::string ToString();
 private:
 	float value;
 	Discipline* discipline;

@@ -19,6 +19,16 @@ void TeacherRole::PrintInfo()
 	}
 }
 
+std::string TeacherRole::ToString()
+{
+	std::string s = "";
+	s += "Teacher\n";
+	for (int i = 0; i < disciplines.size(); i++) {
+		s += disciplines[i]->GetName() + "\n";
+	}
+	return s;
+}
+
 void TeacherRole::AddDiscipline(Discipline * discipline)
 {
 	//Check if discipline already exists
@@ -39,4 +49,15 @@ void TeacherRole::RemoveDiscipline(Discipline * discipline)
 			return;
 		}
 	}
+}
+
+bool TeacherRole::IsTeaching(Discipline * discipline)
+{
+	for (int i = 0; i < disciplines.size(); i++) {
+		if (disciplines[i] == discipline) {
+			return true;
+		}
+	}
+
+	return false;
 }

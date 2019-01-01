@@ -1,4 +1,6 @@
 #pragma once
+#include <string>
+
 class Role
 {
 public:
@@ -14,6 +16,7 @@ public:
 	virtual ~Role();
 
 	virtual void PrintInfo();
+	virtual std::string ToString();
 	int GetRole();
 protected:	
 	RoleType type;

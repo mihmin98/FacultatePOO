@@ -102,6 +102,18 @@ void Person::PrintInfo()
 	std::cout << "\n";
 }
 
+std::string Person::ToString()
+{
+	std::string s = "";
+	s += "First Name: " + firstName + "\nLast Name: " + lastName + "\nCNP: " + cnp + "\nEmail: " + email + "\n\n";
+	for (int i = 0; i < roles.size(); i++) {
+		s += roles[i]->ToString();
+		s += "\n";
+	}
+	s += "\n";
+	return s;
+}
+
 bool Person::IsRole(Role::RoleType role)
 {
 	for (int i = 0; i < roles.size(); i++) {
@@ -112,3 +124,36 @@ bool Person::IsRole(Role::RoleType role)
 	return false;
 }
 
+Role * Person::GetRole(Role::RoleType role)
+{
+	if (!IsRole(role)) {
+		return nullptr;
+	}
+
+	for (int i = 0; i < roles.size(); i++) {
+		if (roles[i]->GetRole() == role) {
+			return roles[i];
+		}
+	}
+	return nullptr;
+}
+
+std::istream & operator>>(std::istream & stream, Person & p)
+{
+	std::cout << "First name: ";
+	stream >> p.firstName;
+	std::cout << "Last name: ";
+	stream >> p.lastName;
+	std::cout << "CNP: ";
+	stream >> p.cnp;
+	std::cout << "Email: ";
+	stream >> p.email;
+	
+	return stream;
+}
+
+std::ostream & operator<<(std::ostream & stream, Person & p)
+{
+	stream << p.ToString();
+	return stream;
+}

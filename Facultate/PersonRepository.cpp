@@ -44,3 +44,51 @@ std::vector<Person*> PersonRepository::FindByRole(Role::RoleType role)
 
 	return v;
 }
+
+std::vector<Person*> PersonRepository::FindByStudyGroup(int studyGroup)
+{
+	std::vector<Person*> v;
+	StudentRole* sRole;
+	for (int i = 0; i < entries.size(); i++) {
+		if (entries[i]->IsRole(Role::STUDENT_ROLE)) {
+			sRole = (StudentRole*)entries[i]->GetRole(Role::STUDENT_ROLE);
+			if (sRole->GetStudyGroup() == studyGroup) {
+				v.push_back(entries[i]);
+			}
+		}
+	}
+
+	return v;
+}
+
+std::vector<Person*> PersonRepository::FindByEnrolledDiscipline(Discipline * discipline)
+{
+	std::vector<Person*> v;
+	StudentRole* sRole;
+	for (int i = 0; i < entries.size(); i++) {
+		if (entries[i]->IsRole(Role::STUDENT_ROLE)) {
+			sRole = (StudentRole*)entries[i]->GetRole(Role::STUDENT_ROLE);
+			if (sRole->IsEnrolled(discipline)) {
+				v.push_back(entries[i]);
+			}
+		}
+	}
+
+	return v;
+}
+
+std::vector<Person*> PersonRepository::FindByTeachingDiscipline(Discipline * discipline)
+{
+	std::vector<Person*> v;
+	TeacherRole* tRole;
+	for (int i = 0; i < entries.size(); i++) {
+		if (entries[i]->IsRole(Role::TEACHER_ROLE)) {
+			tRole = (TeacherRole*)entries[i]->GetRole(Role::TEACHER_ROLE);
+			if (tRole->IsTeaching(discipline)) {
+				v.push_back(entries[i]);
+			}
+		}
+	}
+
+	return v;
+}

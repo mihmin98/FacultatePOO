@@ -24,7 +24,7 @@ inline Repository<Entity>::Repository()
 template<class Entity>
 inline Repository<Entity>::~Repository()
 {
-	for (int i = 0; i < entris.size(); i++) {
+	for (int i = 0; i < entries.size(); i++) {
 		delete entries[i];
 	}
 	entries.clear();

@@ -26,3 +26,13 @@ void MaintenanceActivity::SetOwner(Person * owner)
 	}
 	this->owner = owner;
 }
+
+std::istream & operator>>(std::istream & stream, MaintenanceActivity & ma)
+{
+	std::cout << "Activity name: ";
+	stream >> ma.name;
+	std::cout << "Activity description: ";
+	stream >> ma.description;
+
+	return stream;
+}

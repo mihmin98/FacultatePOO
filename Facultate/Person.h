@@ -28,8 +28,13 @@ public:
 	void AddRole(Role* role);
 	void RemoveRole(Role::RoleType role);
 	void PrintInfo();
+	std::string ToString();
 
 	bool IsRole(Role::RoleType role);
+	Role* GetRole(Role::RoleType role);
+
+	friend std::istream & operator>>(std::istream& stream, Person& p);
+	friend std::ostream & operator<<(std::ostream& stream, Person& p);
 
 private:
 	std::string firstName;

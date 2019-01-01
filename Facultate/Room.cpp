@@ -25,3 +25,22 @@ void Room::SetName(std::string name)
 {
 	this->name = name;
 }
+
+std::string Room::ToString()
+{
+	return this->name;
+}
+
+std::istream & operator>>(std::istream & stream, Room & r)
+{
+	std::cout << "Room name: ";
+	stream >> r.name;
+
+	return stream;
+}
+
+std::ostream & operator<<(std::ostream & stream, Room & r)
+{
+	stream << r.ToString();
+	return stream;
+}

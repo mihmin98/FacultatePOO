@@ -18,6 +18,11 @@ void Role::PrintInfo()
 {
 }
 
+std::string Role::ToString()
+{
+	return "";
+}
+
 int Role::GetRole()
 {
 	return (int)type;

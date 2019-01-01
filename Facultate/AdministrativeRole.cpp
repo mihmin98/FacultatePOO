@@ -19,6 +19,17 @@ void AdministrativeRole::PrintInfo()
 	}
 }
 
+std::string AdministrativeRole::ToString()
+{
+	std::string s = "";
+	s += "Administrative\n";
+	for (int i = 0; i < jobs.size(); i++) {
+		s += jobs[i] + "\n";
+	}
+
+	return s;
+}
+
 void AdministrativeRole::AddJob(std::string job)
 {
 	//Check if job is already in the vector

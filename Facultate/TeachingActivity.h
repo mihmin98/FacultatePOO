@@ -14,6 +14,9 @@ public:
 	void SetDiscipline(Discipline* discipline);
 	Discipline* GetDiscipline();
 
+	std::string ToString() override;
+
+	friend std::istream& operator>>(std::istream& stream, TeachingActivity& ta);
 private:
 	Discipline* discipline;
 };

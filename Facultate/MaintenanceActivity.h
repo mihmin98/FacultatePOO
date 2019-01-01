@@ -8,6 +8,8 @@ public:
 	~MaintenanceActivity();
 
 	void SetOwner(Person* owner) override;
+
+	friend std::istream& operator>>(std::istream& stream, MaintenanceActivity& ma);
 private:
 
 };

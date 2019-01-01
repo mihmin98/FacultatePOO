@@ -39,3 +39,26 @@ Discipline * TeachingActivity::GetDiscipline()
 {
 	return discipline;
 }
+
+std::string TeachingActivity::ToString()
+{
+	std::string s = "";
+	s += "Activity Name: " + name;
+	s += "\nTeaching Activity";
+	s += "\nDiscipline: " + discipline->GetName();
+	s += "\nActivity Description: " + description;
+	s += "\nLocation: " + location->GetName();
+	s += "\nOwner: " + owner->GetFullName();
+
+	return s;
+}
+
+std::istream & operator>>(std::istream & stream, TeachingActivity & ta)
+{
+	std::cout << "Activity name: ";
+	stream >> ta.name;
+	std::cout << "Activity description: ";
+	stream >> ta.description;
+
+	return stream;
+}

@@ -2,6 +2,7 @@
 #include "Room.h"
 #include "Person.h"
 #include <string>
+#include <iostream>
 
 class Activity
 {
@@ -32,7 +33,11 @@ public:
 	void SetDescription(std::string description);
 	void SetLocation(Room* location);
 	virtual void SetOwner(Person* owner);
+
+	virtual std::string ToString();
 	
+	friend std::istream& operator>> (std::istream & stream, Activity & a);
+	friend std::ostream& operator<< (std::ostream & stream, Activity & a);
 
 protected:
 	std::string name;

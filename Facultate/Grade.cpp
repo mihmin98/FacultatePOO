@@ -39,3 +39,8 @@ void Grade::SetValue(float value)
 {
 	this->value = value;
 }
+
+std::string Grade::ToString()
+{
+	return discipline->GetName() + ": " + std::to_string(value) + "\n";
+}

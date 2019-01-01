@@ -54,3 +54,18 @@ std::vector<Activity*> ActivityRepository::FindByType(Activity::ActivityType typ
 	}
 	return v;
 }
+
+std::vector<Activity*> ActivityRepository::FindByDiscipline(Discipline * discipline)
+{
+	std::vector<Activity*> v;
+	TeachingActivity* tActivity;
+	for (int i = 0; i < entries.size(); i++) {
+		if (entries[i]->GetType() == Activity::ActivityType::TEACHING_ACTIVITY) {
+			tActivity = (TeachingActivity*)entries[i];
+			if (tActivity->GetDiscipline() == discipline) {
+				v.push_back(entries[i]);
+			}
+		}
+	}
+	return v;
+}

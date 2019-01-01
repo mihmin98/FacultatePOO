@@ -27,6 +27,16 @@ void StudentRole::PrintInfo()
 	}
 }
 
+std::string StudentRole::ToString()
+{
+	std::string s = "";
+	s += "Student\nStudy Group: " + std::to_string(studyGroup) + "\nGrades:\n";
+	for (int i = 0; i < grades.size(); i++) {
+		s += grades[i]->ToString();
+	}
+	return s;
+}
+
 void StudentRole::AddGrade(Grade * grade)
 {
 	//Check if the discipline already exists
@@ -58,4 +68,19 @@ void StudentRole::ModifyGrade(Discipline * discipline, float value)
 			break;
 		}
 	}
+}
+
+bool StudentRole::IsEnrolled(Discipline * discipline)
+{
+	for (int i = 0; i < grades.size(); i++) {
+		if (grades[i]->GetDiscipline() == discipline) {
+			return true;
+		}
+	}
+	return false;
+}
+
+int StudentRole::GetStudyGroup()
+{
+	return studyGroup;
 }
