@@ -72,6 +72,7 @@ void StudentRole::ModifyGrade(Discipline * discipline, float value)
 
 bool StudentRole::IsEnrolled(Discipline * discipline)
 {
+	//Check if student has the discipline in grades vector
 	for (int i = 0; i < grades.size(); i++) {
 		if (grades[i]->GetDiscipline() == discipline) {
 			return true;

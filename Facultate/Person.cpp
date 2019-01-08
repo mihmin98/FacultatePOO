@@ -84,6 +84,7 @@ void Person::AddRole(Role * role)
 void Person::RemoveRole(Role::RoleType role)
 {
 	for (int i = 0; i < roles.size(); i++) {
+		//Check if person has the role
 		if (roles[i]->GetRole() == (int)role) {
 			delete roles[i];
 			roles.erase(roles.begin() + i);

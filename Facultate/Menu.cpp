@@ -316,11 +316,20 @@ void Menu::Add(Type type)
 		std::cin >> activityDescription;
 
 		//Get location, owner, discipline(if necessary)
-		Room* activityLocation = (Room*)Find(Type::ROOM);
-		Person* activityOwner = (Person*)Find(Type::PERSON);
+		Room* activityLocation = nullptr;
+		do {
+			activityLocation = (Room*)Find(Type::ROOM);
+		} while (activityLocation == nullptr);
+
+		Person* activityOwner = nullptr;
+		do { 
+			activityOwner = (Person*)Find(Type::PERSON); 
+		} while (activityOwner == nullptr);
 		Discipline* activityDiscipline = nullptr;
 		if (activityType == 1) {
-			activityDiscipline = (Discipline*)Find(Type::DISCIPLINE);
+			do {
+				activityDiscipline = (Discipline*)Find(Type::DISCIPLINE);
+			} while (activityDiscipline);
 		}
 
 		switch (activityType) {
@@ -470,7 +479,7 @@ void Menu::Edit(Type type)
 
 			switch (iinput) {
 			case 1: {
-				int studyGroup = NULL;
+				int studyGroup;
 				std::cout << "Enter study group: ";
 				std::cin >> studyGroup;
 				pToEdit->AddRole(new StudentRole(studyGroup));
@@ -558,8 +567,14 @@ void Menu::Edit(Type type)
 
 				switch (iinput) {
 				case 1: {
-					Discipline* d = (Discipline*)Find(Type::DISCIPLINE);
-					TeacherRole* tRole = (TeacherRole*)pToEdit->GetRole(Role::TEACHER_ROLE);
+					Discipline* d = nullptr;
+					do {
+						d = (Discipline*)Find(Type::DISCIPLINE);
+					} while (d == nullptr);
+					TeacherRole* tRole = nullptr;
+					do {
+						tRole = (TeacherRole*)pToEdit->GetRole(Role::TEACHER_ROLE);
+					} while (tRole == nullptr);
 					tRole->AddDiscipline(d);
 					PersonMenu();
 					break;
@@ -888,7 +903,6 @@ void Menu::List(Type type)
 			std::cout << "\n" + std::to_string(temp.size()) + " results found\n";
 			for (int i = 0; i < temp.size(); i++) {
 				std::cout << i + 1 << ")\n";
-				//std::cout << *temp[i];
 				if (temp[i]->GetType() == Activity::ActivityType::TEACHING_ACTIVITY) {
 					std::cout << *(TeachingActivity*)temp[i];
 				}
